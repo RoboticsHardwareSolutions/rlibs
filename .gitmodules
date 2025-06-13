@@ -46,3 +46,6 @@
 [submodule "rboot"]
 	path = rboot
 	url = https://github.com/RoboticsHardwareSolutions/rboot.git
+[submodule "rlibhelper"]
+	path = rlibhelper
+	url = git@github.com:RoboticsHardwareSolutions/rlibhelper.git
