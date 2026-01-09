@@ -1,51 +1,48 @@
-[submodule "rtelnet"]
-	path = rtelnet
-	url = https://github.com/RoboticsHardwareSolutions/rtelnet.git
 [submodule "rcan"]
 	path = rcan
-	url = https://github.com/RoboticsHardwareSolutions/rcan.git
+	url = git@github.com:RoboticsHardwareSolutions/rcan.git
 [submodule "rserial"]
 	path = rserial
-	url = https://github.com/RoboticsHardwareSolutions/rserial.git
+	url = git@github.com:RoboticsHardwareSolutions/rserial.git
 [submodule "runit"]
 	path = runit
-	url = https://github.com/RoboticsHardwareSolutions/runit.git
+	url = git@github.com:RoboticsHardwareSolutions/runit.git
 [submodule "rbtn"]
 	path = rbtn
-	url = https://github.com/RoboticsHardwareSolutions/rbtn.git
+	url = git@github.com:RoboticsHardwareSolutions/rbtn.git
 [submodule "rbuffer"]
 	path = rbuffer
-	url = https://github.com/RoboticsHardwareSolutions/rbuffer.git
+	url = git@github.com:RoboticsHardwareSolutions/rbuffer.git
 [submodule "rcrc"]
 	path = rcrc
-	url = https://github.com/RoboticsHardwareSolutions/rcrc.git
+	url = git@github.com:RoboticsHardwareSolutions/rcrc.git
 [submodule "rbase64"]
 	path = rbase64
-	url = https://github.com/RoboticsHardwareSolutions/rbase64.git
+	url = git@github.com:RoboticsHardwareSolutions/rbase64.git
 [submodule "rtimeout"]
 	path = rtimeout
-	url = https://github.com/RoboticsHardwareSolutions/rtimeout.git
+	url = git@github.com:RoboticsHardwareSolutions/rtimeout.git
 [submodule "rtimer"]
 	path = rtimer
-	url = https://github.com/RoboticsHardwareSolutions/rtimer.git
+	url = git@github.com:RoboticsHardwareSolutions/rtimer.git
 [submodule "rstorage"]
 	path = rstorage
-	url = https://github.com/RoboticsHardwareSolutions/rstorage.git
+	url = git@github.com:RoboticsHardwareSolutions/rstorage.git
 [submodule "rlog"]
 	path = rlog
-	url = https://github.com/RoboticsHardwareSolutions/rlog.git
+	url = git@github.com:RoboticsHardwareSolutions/rlog.git
 [submodule "rproto"]
 	path = rproto
-	url = https://github.com/RoboticsHardwareSolutions/rproto.git
+	url = git@github.com:RoboticsHardwareSolutions/rproto.git
 [submodule "rdebug"]
 	path = rdebug
-	url = https://github.com/RoboticsHardwareSolutions/rdebug.git
+	url = git@github.com:RoboticsHardwareSolutions/rdebug.git
 [submodule "rnode"]
 	path = rnode
-	url = https://github.com/RoboticsHardwareSolutions/rnode.git
+	url = git@github.com:RoboticsHardwareSolutions/rnode.git
 [submodule "rboot"]
 	path = rboot
-	url = https://github.com/RoboticsHardwareSolutions/rboot.git
+	url = git@github.com:RoboticsHardwareSolutions/rboot.git
 [submodule "rlibhelper"]
 	path = rlibhelper
 	url = git@github.com:RoboticsHardwareSolutions/rlibhelper.git

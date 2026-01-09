@@ -3,16 +3,24 @@ project(BareMetalPLCPAL)
 
 set(CMAKE_C_STANDARD 11)
 
-add_subdirectory(runit)
+add_subdirectory(rbase64)
+add_subdirectory(rbtn)
 add_subdirectory(rbuffer)
 add_subdirectory(rcrc)
-add_subdirectory(rbase64)
-add_subdirectory(rserial)
-add_subdirectory(rstorage)
 add_subdirectory(rtimeout)
 add_subdirectory(rtimer)
+add_subdirectory(rserial)
+add_subdirectory(rstorage)
+#add_subdirectory(runit)
 
-#add_subdirectory(rbtn)
+
+
+
+
+
+
+
+
 #add_subdirectory(rboot)
 #add_subdirectory(rcan)
 #add_subdirectory(rdebug)
