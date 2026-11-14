@@ -1,72 +1,43 @@
-cmake_minimum_required(VERSION 3.10)
-project(BareMetalPLCPAL)
+cmake_minimum_required(VERSION 3.24)
+project(BareMetalPLCPAL
+        LANGUAGES C
+        DESCRIPTION
+        "Collection of small, portable C libraries for embedded and host platforms")
 
 set(CMAKE_C_STANDARD 11)
 
-add_subdirectory(rlibhelper)
-add_subdirectory(runit)
-add_subdirectory(rlog)
-add_subdirectory(rtimeout)
-add_subdirectory(rnode)
-add_subdirectory(rbase64)
-add_subdirectory(rbtn)
-add_subdirectory(rbuffer)
-add_subdirectory(rcrc)
-add_subdirectory(rtimer)
-add_subdirectory(rserial)
-add_subdirectory(rstorage)
-add_subdirectory(rproto)
-add_subdirectory(rdebug)
-add_subdirectory(rboot)
+enable_testing()
 
-#add_subdirectory(rcan)
-
-
-
-
-#FORMAT
-
-# Create aggregate format target for all subprojects
-add_custom_target(format_code
-        COMMAND ${CMAKE_COMMAND} --build . --target rbase64_format
-        COMMAND ${CMAKE_COMMAND} --build . --target rboot_format
-        COMMAND ${CMAKE_COMMAND} --build . --target rbtn_format
-        COMMAND ${CMAKE_COMMAND} --build . --target rbuffer_format
-#        COMMAND ${CMAKE_COMMAND} --build . --target rcan_format
-        COMMAND ${CMAKE_COMMAND} --build . --target rcrc_format
-        COMMAND ${CMAKE_COMMAND} --build . --target rdebug_format
-        COMMAND ${CMAKE_COMMAND} --build . --target rlog_format
-        COMMAND ${CMAKE_COMMAND} --build . --target rnode_format
-        COMMAND ${CMAKE_COMMAND} --build . --target rproto_format
-        COMMAND ${CMAKE_COMMAND} --build . --target rserial_format
-        COMMAND ${CMAKE_COMMAND} --build . --target rstorage_format
-        COMMAND ${CMAKE_COMMAND} --build . --target rtimeout_format
-        COMMAND ${CMAKE_COMMAND} --build . --target rtimer_format
-        COMMAND ${CMAKE_COMMAND} --build . --target runit_format
-        WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
-        COMMENT "Running clang-format on all source files"
+#################### SUBPROJECTS #######################
+set(RLIBS_SUBPROJECTS
+        rlibhelper
+        runit
+        rlog
+        rtimeout
+        rnode
+        rbase64
+        rbtn
+        rbuffer
+        rcrc
+        rtimer
+        rserial
+        rstorage
+        rproto
+#        rdebug
+        rboot
+        rcan  # disabled: mid-refactor (see earlier session work), build intentionally broken
 )
 
+foreach (lib ${RLIBS_SUBPROJECTS})
+    add_subdirectory(${lib})
+endforeach ()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#################### FORMAT SECTION #######################
+add_custom_target(format_code COMMENT "Running clang-format on all source files")
+foreach (lib ${RLIBS_SUBPROJECTS})
+    if (TARGET ${lib}_format)
+        add_custom_command(TARGET format_code POST_BUILD
+                COMMAND ${CMAKE_COMMAND} --build . --target ${lib}_format
+                WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
+    endif ()
+endforeach ()
